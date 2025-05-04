@@ -1,0 +1,6 @@
+@GematriaLvstana_HostAddress = http://localhost:5070
+
+GET {{GematriaLvstana_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

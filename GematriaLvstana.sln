@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GematriaLvistana", "GematriaLvstana\GematriaLvistana.csproj", "{32694F89-D323-446F-B913-E18F851340DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GematriaLvsitanaTests", "GematriaLvsitanaTests\GematriaLvsitanaTests.csproj", "{675EA822-1091-43A2-B41F-20AEF87A6B10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32694F89-D323-446F-B913-E18F851340DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32694F89-D323-446F-B913-E18F851340DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32694F89-D323-446F-B913-E18F851340DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32694F89-D323-446F-B913-E18F851340DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675EA822-1091-43A2-B41F-20AEF87A6B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675EA822-1091-43A2-B41F-20AEF87A6B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675EA822-1091-43A2-B41F-20AEF87A6B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675EA822-1091-43A2-B41F-20AEF87A6B10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3B7423C-D163-41B4-9487-5B6A98435003}
+	EndGlobalSection
+EndGlobal
