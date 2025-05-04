@@ -1,11 +1,22 @@
+using GematriaLvistana.Data;
+using GematriaLvistana.Repositories;
+using GematriaLvistana.Services.Implementation;
+using GematriaLvstana.Services.Interface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddLogging();
+//builder.Services.AddScoped<IGematriaRepository, GematriaRepository>();
+builder.Services.AddTransient<IGematriaService, GematriaService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<GematriaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
