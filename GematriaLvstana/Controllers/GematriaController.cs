@@ -13,6 +13,23 @@ namespace GematriaLvstana.Controllers
             _gematriaService = gematriaService;
             _logger = logger;
         }
+
+        [HttpPost]
+        [Route("api/create/{value}")]
+        public async Task<ActionResult<WordModel>> CreateWord(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return BadRequest("Value cannot be null or empty.");
+            }
+            var word = await _gematriaService.CreateWord(value);
+            if (word == null)
+            {
+                return NotFound("Word not found.");
+            }
+            return Ok(word);
+        }
+
         [HttpGet]
         [Route("api/gematria")]
         public IActionResult Get()

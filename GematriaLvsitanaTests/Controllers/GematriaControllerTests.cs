@@ -30,6 +30,7 @@ public class GematriaControllerTests
 
     }
 
+    #region GET
 
     [Fact]
     public async Task Controller_Get_ByNumber_Should_Return_ValidWord()
@@ -81,4 +82,34 @@ public class GematriaControllerTests
         var notFoundResult = Assert.IsType<NotFoundObjectResult>(result.Result); // Verifica se o resultado é NotFound
         Assert.Equal("No words found with the specified value.", notFoundResult.Value); // Verifica a mensagem de erro
     }
+    #endregion
+
+    #region registerWord
+    [Fact]
+    public async Task Controller_CreateWord_Should_CreateNewWordModel()
+    {
+        // Arrange
+        WordModel expectedWord = new WordModel
+        {
+            Id = 1,
+            Word = "ana",
+            NumericalValue = 56,
+            HebrewEquivalent = "אנה"
+        };
+
+        _gematriaServiceMock.Setup(gs => gs.CreateWord("ana")).ReturnsAsync(expectedWord);
+
+        //act 
+        var result = await sut.CreateWord("ana");
+
+        //assert
+        var okResult = Assert.IsType<OkObjectResult>(result.Result); // Verifica se o resultado é do tipo OkObjectResult
+        var actualWord = Assert.IsType<WordModel>(okResult.Value); // Verifica o valor retornado
+        Assert.Equal(expectedWord.Id, actualWord.Id); // Compara o Id
+        Assert.Equal(expectedWord.Word, actualWord.Word); // Compara a palavra
+        Assert.Equal(expectedWord.NumericalValue, actualWord.NumericalValue); // Compara o valor numérico
+        Assert.Equal(expectedWord.HebrewEquivalent, actualWord.HebrewEquivalent); // Compara o equivalente hebraico
+    }
+    #endregion 
 }
+
